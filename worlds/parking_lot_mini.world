@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="parking_lot_mini">
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <!-- Perimeter curbs -->
+    <model name="curb_north"><static>true</static><pose>0 4.2 0.4 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>20 0.2 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>20 0.2 0.8</size></box></geometry></visual></link></model>
+
+    <model name="curb_south"><static>true</static><pose>0 -4.2 0.4 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>20 0.2 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>20 0.2 0.8</size></box></geometry></visual></link></model>
+
+    <model name="curb_east"><static>true</static><pose>9.8 0 0.4 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.2 8.6 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 8.6 0.8</size></box></geometry></visual></link></model>
+
+    <model name="curb_west"><static>true</static><pose>-9.8 0 0.4 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>0.2 8.6 0.8</size></box></geometry></collision>
+        <visual name="v"><geometry><box><size>0.2 8.6 0.8</size></box></geometry></visual></link></model>
+
+    <!-- Bay markers (visual only) -->
+    <!-- x positions: -6, -2, 2, 6 ; y: +3 and -3 -->
+    <model name="bayN1"><static>true</static><pose>-6 3.0 0.01 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>2.4 1.2 0.02</size></box></geometry></visual></link></model>
+    <model name="bayN2"><static>true</static><pose>-2 3.0 0.01 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>2.4 1.2 0.02</size></box></geometry></visual></link></model>
+    <model name="bayN3"><static>true</static><pose>2 3.0 0.01 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>2.4 1.2 0.02</size></box></geometry></visual></link></model>
+    <model name="bayN4"><static>true</static><pose>6 3.0 0.01 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>2.4 1.2 0.02</size></box></geometry></visual></link></model>
+
+    <model name="bayS1"><static>true</static><pose>-6 -3.0 0.01 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>2.4 1.2 0.02</size></box></geometry></visual></link></model>
+    <model name="bayS2"><static>true</static><pose>-2 -3.0 0.01 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>2.4 1.2 0.02</size></box></geometry></visual></link></model>
+    <model name="bayS3"><static>true</static><pose>2 -3.0 0.01 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>2.4 1.2 0.02</size></box></geometry></visual></link></model>
+    <model name="bayS4"><static>true</static><pose>6 -3.0 0.01 0 0 0</pose><link name="l"><visual name="v"><geometry><box><size>2.4 1.2 0.02</size></box></geometry></visual></link></model>
+
+    <!-- “Cars” as static boxes occupying some bays -->
+    <model name="car_N2"><static>true</static><pose>-2 3.0 0.35 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1.8 0.9 0.7</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>1.8 0.9 0.7</size></box></geometry></visual></link></model>
+
+    <model name="car_S3"><static>true</static><pose>2 -3.0 0.35 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1.8 0.9 0.7</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>1.8 0.9 0.7</size></box></geometry></visual></link></model>
+
+    <model name="car_N4"><static>true</static><pose>6 3.0 0.35 0 0 0</pose>
+      <link name="l"><collision name="c"><geometry><box><size>1.8 0.9 0.7</size></box></geometry></collision>
+      <visual name="v"><geometry><box><size>1.8 0.9 0.7</size></box></geometry></visual></link></model>
+
+  </world>
+</sdf>
